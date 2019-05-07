@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import "~slick-carousel/slick/slick.css";
+
+//vars
+$breakpoint-medium: 639px;
+$breakpoint-large:  1199px;
+
+body{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+
+.container{
+  margin: 0 auto;
+  padding: 0 25px;
+  max-width: 1230px;
+}
+
+
+//elevation
+
+@mixin elevation-1{
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+@mixin elevation-2{
+  box-shadow: 0 3px 6px rgba(134, 113, 113, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+@mixin elevation-3{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+@mixin elevation-4{
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+@mixin elevation-5{
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+//configure slick
+
+.slick-list {
+  //overflow: visible !important;
+}
+
+.slick-disabled {
+  transition: .6s;
+  opacity: 0;
+}
+
+.slick-arrow i{
+  
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+
+  position: absolute;
+  color: #fff;
+  background-color: rgba(110, 101, 95, 0.7);
+  padding: 7px;
+  border-radius: 100%;
+  font-size: 60px;
+  cursor: pointer;
+  @include elevation-1();
+  transition: .4s;
+  &:hover{
+    transition: .4s;
+    @include elevation-2();
+  }
+}
+
+.slick-prev i{    
+  left: 10px;  
+}
+.slick-next i{   
+  right: 10px;  
+}
+//slider
+.variable-width-slider{
+  margin-top: 50px;
+}
+
+.variable-slider__slide{
+  margin: 27px;  
+  height: 750px;
+  display: grid;
+  &__inner{
+    margin: auto;
+  }
+  &__img{
+    max-width: 90vw;
+    @media (min-width: $breakpoint-large) {
+      max-width: 100%;    
+      max-height: 750px;
+      object-fit: cover;
+      object-position: center;
+    }    
+  }  
+  &__description{
+    margin-top: 1px;
+    opacity: 0.65;
+    color: #51473F;
+    font-size: 16px;
+    line-height: 27px;
+  }
+}
+
+//rich text
+.rich-text{
+  max-width: 628px;
+  margin: 0 auto;
+}
