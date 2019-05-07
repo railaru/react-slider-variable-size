@@ -1,13 +1,21 @@
+//start imports
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 @import "~slick-carousel/slick/slick.css";
+//end imports
 
-//vars
+//start vars
 $breakpoint-medium: 639px;
 $breakpoint-large:  1199px;
+//end vars
 
+//start globals
 body{
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+.App{
+  padding: 100px 0;
 }
 a{
   text-decoration: none;
@@ -18,8 +26,10 @@ a{
   padding: 0 25px;
   max-width: 1230px;
 }
+//end globals
 
 
+//start utilities
 //elevation
 
 @mixin elevation-1{
@@ -37,12 +47,9 @@ a{
 @mixin elevation-5{
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
+//start utilities
 
-//configure slick
-
-.slick-list {
-  //overflow: visible !important;
-}
+//start configure slick
 
 .slick-disabled {
   transition: .6s;
@@ -76,11 +83,9 @@ a{
 .slick-next i{   
   right: 10px;  
 }
-//slider
-.variable-width-slider{
-  margin-top: 50px;
-}
+//end configure slick
 
+//start variable size slider
 .variable-slider__slide{
   margin: 27px;  
   height: 750px;
@@ -105,9 +110,40 @@ a{
     line-height: 27px;
   }
 }
+//end variable size slider
 
-//rich text
-.rich-text{
-  max-width: 628px;
-  margin: 0 auto;
+//start variable size slider -- width
+.variable-slider--width-container{
+  margin-top: 50px;
+  .slick-list{
+    overflow: initial !important;
+  }
 }
+.card{
+  display: block;
+  margin: 0 5px;
+  width: 416px;
+  &__img{
+    width: 416px;
+    height: 277px;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__title{
+    color: #000000;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    
+    margin-top: 30px;
+    margin-right: 30px;
+  }
+  &__category{
+    color: rgba(81, 71, 63, 0.7);
+    font-size: 24px;
+    line-height: 30px;
+
+    margin-top: 3px;
+  }
+}
+//end variable size slider -- width
