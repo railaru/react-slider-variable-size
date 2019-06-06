@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.scss';
-import VariableSlider      from './Components/VariableSlider/VariableSlider'
-import VariableSliderWidth from './Components/VariableSlider--width/VariableSlider--width'
+//import VariableSlider from './Components/VariableSlider/VariableSlider'
+import VariableSliderWidth from './Components/Holders/FullWidthSlider/FullWidthSlider'
 
 function App() {
   return (
-    <div className="App">      
-      <VariableSlider/>      
-      <VariableSliderWidth/>      
+    <div className="App">
+      {/* <VariableSlider/>       */}
+      <VariableSliderWidth />
     </div>
   );
 }

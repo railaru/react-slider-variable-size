@@ -1,111 +1,215 @@
 //start imports
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 @import "~slick-carousel/slick/slick.css";
 //end imports
 
 //start vars
-$breakpoint-medium: 639px;
-$breakpoint-large:  1199px;
+$breakpoint-m: 639px;
+$breakpoint-l: 1199px;
 //end vars
 
 //start globals
-body{
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
+body {
   overflow-x: hidden;
 }
-.App{
-  padding: 100px 0;
-}
-a{
-  text-decoration: none;
-}
 
-.container{
-  margin: 0 auto;
-  padding: 0 25px;
-  max-width: 1230px;
-}
 //end globals
 
-
 //start utilities
+.rotate-180-deg {
+  transform: rotate(180deg);
+}
+.hidden-from-dom {
+  position: absolute;
+  height: 0;
+  width: 0;
+  left: -300vw;
+}
+//end utilities
+
+//start loading mockups
+.full-width-slider-mockup {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  @media (min-width: $breakpoint-m) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (min-width: $breakpoint-l) {
+    grid-column-gap: 12px;
+  }
+  &__slide {
+    &__img {
+      height: 120px;
+      @media (min-width: $breakpoint-l) {
+        height: 280px;
+      }
+      background: #e3e3e3;
+    }
+    &__text-1 {
+      border-radius: 3px;
+      margin-top: 10px;
+      height: 20px;
+      background: #e3e3e3;
+    }
+    &__text-2 {
+      border-radius: 3px;
+      margin-top: 10px;
+      height: 20px;
+      background: #e3e3e3;
+      width: 75%;
+    }
+    &--last {
+      display: none;
+      @media (min-width: $breakpoint-m) {
+        display: block;
+      }
+    }
+  }
+}
+//end loading mockups
+
 //elevation
 
-@mixin elevation-1{
+@mixin elevation-1 {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-@mixin elevation-2{
+@mixin elevation-2 {
   box-shadow: 0 3px 6px rgba(134, 113, 113, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-@mixin elevation-3{
+@mixin elevation-3 {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
-@mixin elevation-4{
+@mixin elevation-4 {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-@mixin elevation-5{
+@mixin elevation-5 {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
-//start utilities
+//end utilities
 
-//start configure slick
-
-.slick-disabled {
-  transition: .6s;
-  opacity: 0;
-}
-
-.slick-arrow i{
-  
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-
-  position: absolute;
-  color: #fff;
-  background-color: rgba(110, 101, 95, 0.7);
-  padding: 7px;
-  border-radius: 100%;
-  font-size: 60px;
-  cursor: pointer;
-  @include elevation-1();
-  transition: .4s;
-  &:hover{
-    transition: .4s;
-    @include elevation-2();
+//start doers
+.card-3 {
+  display: block;
+  overflow: hidden;
+  width: 175px;
+  @media (min-width: $breakpoint-l) {
+    width: 420px;
+  }
+  &__img-container {
+    overflow: hidden;
+  }
+  &__img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 120px;
+    @media (min-width: $breakpoint-l) {
+      height: 280px;
+    }
+    transition: 500ms;
+  }
+  &__text-1 {
+    margin-top: 11px;
+  }
+  &__additional-link-1 {
+    border-bottom: #51473f 1px solid;
+  }
+  &:hover {
+    .card-3__img {
+      transform: scale(1.05);
+      transition: 500ms;
+    }
+    .dark-overlay-1 {
+      opacity: 1;
+      transition: 500ms;
+    }
   }
 }
+//end doers
 
-.slick-prev i{    
-  left: 10px;  
+.full-width-slider {
+  position: relative;
+
+  //start configure slick
+  .slick-list {
+    overflow: initial !important;
+  }
+
+  .slick-slider {
+    position: initial !important;
+  }
+
+  .slick-arrow svg {
+    display: none;
+
+    @media (min-width: $breakpoint-l) {
+      display: block;
+    }
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    fill: #fff;
+    background-color: rgba(110, 101, 95, 0.7);
+    border-radius: 50%;
+    font-size: 60px;
+    width: 39px;
+    height: 39px;
+    padding: 20.5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(256, 256, 256, 0.7);
+      fill: rgba(110, 101, 95, 1);
+    }
+  }
+
+  .slick-prev svg {
+    left: 10px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .slick-next svg {
+    right: 10px;
+  }
+
+  .slick-slide {
+    margin: 0 5px;
+  }
+  .slick-list {
+    margin: 0 -5px;
+  }
+  @media (min-width: $breakpoint-l) {
+    .slick-slide {
+      margin: 0 6px;
+    }
+    .slick-list {
+      margin: 0 -6px;
+    }
+  }
+  //end configure slick
 }
-.slick-next i{   
-  right: 10px;  
-}
-//end configure slick
 
 //start variable size slider
-.variable-slider__slide{
-  margin: 27px;  
+.variable-slider__slide {
+  margin: 27px;
   height: 750px;
   display: grid;
-  &__inner{
+  &__inner {
     margin: auto;
   }
-  &__img{
+  &__img {
     max-width: 90vw;
-    @media (min-width: $breakpoint-large) {
-      max-width: 100%;    
+    @media (min-width: $breakpoint-l) {
+      max-width: 100%;
       max-height: 750px;
       object-fit: cover;
       object-position: center;
-    }    
-  }  
-  &__description{
+    }
+  }
+  &__description {
     margin-top: 1px;
     opacity: 0.65;
-    color: #51473F;
+    color: #51473f;
     font-size: 16px;
     line-height: 27px;
   }
@@ -113,32 +217,27 @@ a{
 //end variable size slider
 
 //start variable size slider -- width
-.variable-slider--width-container{
-  margin-top: 50px;
-  .slick-list{
-    overflow: initial !important;
-  }
-}
-.card{
+
+.card {
   display: block;
   margin: 0 5px;
   width: 416px;
-  &__img{
+  &__img {
     width: 416px;
     height: 277px;
     object-fit: cover;
     object-position: center;
   }
-  &__title{
+  &__title {
     color: #000000;
     font-size: 24px;
     font-weight: 500;
     line-height: 30px;
-    
+
     margin-top: 30px;
     margin-right: 30px;
   }
-  &__category{
+  &__category {
     color: rgba(81, 71, 63, 0.7);
     font-size: 24px;
     line-height: 30px;
