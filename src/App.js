@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import './App.scss';
+import FullWidthSliderLoadingMockup from './Components/Holders/FullWidthSlider/FullWidthSliderLoadingMockup'
 //import VariableSlider from './Components/VariableSlider/VariableSlider'
-import VariableSliderWidth from './Components/Holders/FullWidthSlider/FullWidthSlider'
+
+const FullWidthSlider = lazy(() => import('./Components/Holders/FullWidthSlider/FullWidthSlider'));
 
 function App() {
   return (
     <div className="App">
-      {/* <VariableSlider/>       */}
-      <VariableSliderWidth />
+      <Suspense fallback={
+        <FullWidthSliderLoadingMockup />
+      }>
+        <FullWidthSlider />
+      </Suspense>
     </div>
   );
 }

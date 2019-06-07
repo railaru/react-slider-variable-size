@@ -22,11 +22,6 @@ export default class FullWidthSlider extends React.Component {
         window.addEventListener('resize', () => {
             this.checkVisibleSlideAmount()
         });
-
-        setTimeout(() => {
-            document.querySelector('.full-width-slider-mockup').style.display = 'none'
-            document.querySelector('.full-width-slider').classList.remove('hidden-from-dom')
-        }, 750);
     }
 
     componentDidUpdate() {
@@ -140,9 +135,10 @@ export default class FullWidthSlider extends React.Component {
         };
 
         return (
-            <div className='full-width-slider hidden-from-dom'>
+            <div className='full-width-slider'>
                 <div className='container'>
                     <Slider className='variable-slider--width' {...settings}>
+
                         <Card
                             img='https://images.unsplash.com/photo-1559546763-f6f6e1f44e23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80'
                             link='https://www.google.com'
