@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import './App.scss';
 import FullWidthSliderLoadingMockup from './Components/Holders/FullWidthSlider/FullWidthSliderLoadingMockup'
-//import VariableSlider from './Components/VariableSlider/VariableSlider'
+import VariableSlider from './Components/Holders/VariableSlider/VariableSlider'
 
 const FullWidthSlider = lazy(() => import('./Components/Holders/FullWidthSlider/FullWidthSlider'));
 
@@ -13,6 +13,7 @@ function App() {
       }>
         <FullWidthSlider />
       </Suspense>
+      <VariableSlider />
     </div>
   );
 }

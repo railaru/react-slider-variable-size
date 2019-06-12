@@ -85,6 +85,9 @@ body {
 }
 //end doers
 
+//start holders
+
+//start slider 1
 .full-width-slider {
   position: relative;
 
@@ -146,35 +149,99 @@ body {
   }
   //end configure slick
 }
+//end slider 1
 
-//start variable size slider
-.variable-slider__slide {
-  margin: 27px;
-  height: 750px;
-  display: grid;
-  &__inner {
-    margin: auto;
+//start slider 2
+.variable-slider {
+  //start configure slick
+  .slick-list {
+    overflow: initial !important;
   }
-  &__img {
-    max-width: 90vw;
+
+  .slick-slider {
+    position: initial !important;
+  }
+
+  .slick-arrow svg {
+    display: none;
+
     @media (min-width: $breakpoint-l) {
-      max-width: 100%;
-      max-height: 750px;
-      object-fit: cover;
-      object-position: center;
+      display: block;
+    }
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    fill: #fff;
+    background-color: rgba(110, 101, 95, 0.7);
+    border-radius: 50%;
+    font-size: 60px;
+    width: 39px;
+    height: 39px;
+    padding: 20.5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(256, 256, 256, 0.7);
+      fill: rgba(110, 101, 95, 1);
     }
   }
-  &__description {
-    margin-top: 1px;
-    opacity: 0.65;
-    color: #51473f;
-    font-size: 16px;
-    line-height: 27px;
+
+  .slick-prev svg {
+    left: 10px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .slick-next svg {
+    right: 10px;
+  }
+
+  .slick-disabled {
+    display: none !important;
+  }
+
+  .slick-slide {
+    margin: 0 5px;
+  }
+  .slick-list {
+    margin: 0 -5px;
+  }
+  @media (min-width: $breakpoint-l) {
+    .slick-slide {
+      margin: 0 6px;
+    }
+    .slick-list {
+      margin: 0 -6px;
+    }
+  }
+  //end configure slick
+
+  &__slide {
+    margin: 27px;
+    height: 750px;
+    display: grid;
+    &__inner {
+      margin: auto;
+    }
+    &__img {
+      max-width: 90vw;
+      @media (min-width: $breakpoint-l) {
+        max-width: 100%;
+        max-height: 750px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    &__description {
+      margin-top: 5px;
+      @media (min-width: $breakpoint-l) {
+        margin-top: 10px;
+      }
+    }
   }
 }
-//end variable size slider
+//end slider 2
 
-//start variable size slider -- width
+//end holders
 
 .card {
   display: block;
@@ -203,4 +270,3 @@ body {
     margin-top: 3px;
   }
 }
-//end variable size slider -- width
