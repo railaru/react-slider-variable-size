@@ -270,3 +270,28 @@ body {
     margin-top: 3px;
   }
 }
+
+//mockup
+
+.full-width-slider-mockup{
+  $skeleton-color: #EBEAE9;
+  display: grid;
+  grid-template-columns: repeat(5, 420px);
+  grid-gap: 10px;
+  &__slide{
+    &__img{
+      height: 300px;
+      background: $skeleton-color;
+    }
+    &__text-1, &__text-2{
+      background: $skeleton-color;
+      height: 20px;
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 3px;
+    }
+    &__text-2{
+      width: 50%;
+    }
+  }
+}

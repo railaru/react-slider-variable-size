@@ -8,12 +8,13 @@ const FullWidthSlider = lazy(() => import('./Components/Holders/FullWidthSlider/
 function App() {
   return (
     <div className="App">
-      <Suspense fallback={
-        <FullWidthSliderLoadingMockup />
-      }>
-        <FullWidthSlider />
-      </Suspense>
-      <VariableSlider />
+        <Suspense fallback={
+                <FullWidthSliderLoadingMockup />
+            }>
+            <FullWidthSlider />
+        </Suspense>
+
+        <VariableSlider />
     </div>
   );
 }
