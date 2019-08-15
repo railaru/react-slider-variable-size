@@ -66,27 +66,27 @@ export default class VariableSlider extends React.Component {
         return (
             <Slider className='variable-slider' {...settings} style={{ paddingTop: '50px' }}>
                 <Slide
-                    img='https://source.unsplash.com/random/1120x750'
+                    img='https://images.unsplash.com/photo-1557816596-d3a1475c6a93?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1120&h=750&fit=crop&ixid=eyJhcHBfaWQiOjF9'
                     description='Photo © Chris Jackson'
                 />
                 <Slide
-                    img='https://source.unsplash.com/random/800x585'
+                    img='https://images.unsplash.com/photo-1560091410-029801c9b3a4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=585&fit=crop&ixid=eyJhcHBfaWQiOjF9'
                     description='Photo © Chris Jackson'
                 />
                 <Slide
-                    img='https://source.unsplash.com/random/1120x750'
+                    img='https://images.unsplash.com/photo-1557816596-d3a1475c6a93?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1120&h=750&fit=crop&ixid=eyJhcHBfaWQiOjF9'
                     description='Photo © Chris Jackson'
                 />
                 <Slide
-                    img='https://source.unsplash.com/random/800x585'
+                    img='https://images.unsplash.com/photo-1560091410-029801c9b3a4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=585&fit=crop&ixid=eyJhcHBfaWQiOjF9'
                     description='Photo © Chris Jackson'
                 />
                 <Slide
-                    img='https://source.unsplash.com/random/1200x800'
+                    img='https://images.unsplash.com/photo-1560229855-d604bee29724?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1200&h=800&fit=crop&ixid=eyJhcHBfaWQiOjF9'
                     description='Photo © Chris Jackson'
                 />
                 <Slide
-                    img='https://source.unsplash.com/random/400x300'
+                    img='https://images.unsplash.com/photo-1557786907-6db6b1dc52bc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&h=300&fit=crop&ixid=eyJhcHBfaWQiOjF9'
                     description='Photo © Chris Jackson'
                 />
             </Slider>
